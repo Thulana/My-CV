@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.7.6)  22 DEC 2019 16:28
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2019.7.6)  2 JAN 2020 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,11 +1331,6 @@ Overfull \hbox (1.2581pt too wide) in paragraph at lines 92--92
 [][]| 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
-[][]\T1/ClearSans(0)/m/sc/10 linkedin.com/in/thulana-
- []
-
 Requested font "ecrm2074" at 20.74pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm2074.tfm
 Requested font "ecrm0800" at 8.0pt
@@ -1404,7 +1399,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  29801 strings out of 494988
  590351 string characters out of 6178639
- 659469 words of memory out of 5000000
+ 659405 words of memory out of 5000000
  33295 multiletter control sequences out of 15000+600000
  538734 words of font info for 42 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
