@@ -10,3 +10,8 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: cv.tex
+      - name: Add to release
+        uses: actions/upload-artifact@v1
+        with:
+          name: cv-$(git rev-parse --short "$GITHUB_SHA")
+          path: src/cv.pdf
