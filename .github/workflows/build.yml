@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: cv.tex
+          working_directory: src/
       - name: Add to release
         uses: actions/upload-artifact@v1
         with:
