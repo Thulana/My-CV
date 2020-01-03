@@ -13,5 +13,5 @@ jobs:
       - name: Add to release
         uses: actions/upload-artifact@v1
         with:
-          name: cv-$(git rev-parse --short "$GITHUB_SHA")
+          name: cv-${GITHUB_SHA::8}
           path: cv.pdf
