@@ -1,7 +1,7 @@
 # The name of the main .tex file to build.
 # Other files can be included into this one.
 DOCUMENT = cv
-OUTPUT = output
+OUTPUT = .
 PDF = $(OUTPUT)/$(DOCUMENT).pdf
 
 LATEX_FLAGS = -halt-on-error -output-directory $(OUTPUT)/
