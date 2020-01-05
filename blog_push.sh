@@ -1,22 +1,15 @@
 #!/bin/sh
 
-setup_git() {
-  git config --global user.email "travis@travis-ci.org"
-  git config --global user.name "Travis CI"
-}
 
 commit_website_files() {
-  git checkout -b gh-pages
-  git add . *.html
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  git clone https://github.com/Thulana/thulana.github.io.git
+  cp ./cv.pdf ./thulana.github.io/assets/cv.pdf
+  cd ./thulana.github.io && git add assets/cv.pdf
+  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER - Pushing updated cv to the blog"
+  git push https://"${GITHUB_USER}":"${GITHUB_PASSWORD}"@thulana.github.io.git --all
 }
 
-upload_files() {
-  git remote add origin-pages https://${GH_TOKEN}@github.com/MVSE-outreach/resources.git > /dev/null 2>&1
-  git push --quiet --set-upstream origin-pages gh-pages
-}
 
 echo "pushing to my blog"
-#setup_git
-#commit_website_files
+commit_website_files
 #upload_files
