@@ -3,9 +3,11 @@ os: linux
 ## we use the R VM because it contains LaTeX and pandoc
 #language: r
 
-# we need super user privileges, so we depend on the old travis-ci infrastructure
-sudo: required
+## we need super user privileges, so we depend on the old travis-ci infrastructure
+#sudo: required
 
+before_install:
+  - sudo apt-get install -y texlive-full
 
 #apt_packages:
 #  # we download pdf2djvu to also generate a djvu file of our LaTeX source
