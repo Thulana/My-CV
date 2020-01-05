@@ -1,7 +1,7 @@
 os: linux
-
-# we use the R VM because it contains LaTeX and pandoc
-language: r
+#
+## we use the R VM because it contains LaTeX and pandoc
+#language: r
 
 # we need super user privileges, so we depend on the old travis-ci infrastructure
 sudo: required
