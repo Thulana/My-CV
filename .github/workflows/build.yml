@@ -13,7 +13,15 @@ jobs:
       - name: Add to release
         uses: actions/upload-artifact@v1
         with:
-          name: cv-$SHA8
+          name: cv-${SHA8}
           path: cv.pdf
         env:
           SHA8: ${GITHUB_SHA::8}
+      - name: Deploy app
+        if: github.ref == 'refs/heads/master'
+        run: |
+          git clone https://github.com/Thulana/thulana.github.io.git
+          cp ./cv.pdf ./thulana.github.io/assets/cv.pdf
+          cd ./thulana.github.io && git add assets/cv.pdf
+          git commit --message "Travis build: $GITHUB_SHA - Pushing updated cv to the blog"
+          git push https://"${GITHUB_USER}":"${GITHUB_PASSWORD}"@github.com/Thulana/thulana.github.io.git --all
