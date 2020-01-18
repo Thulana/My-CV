@@ -1,3 +1,3 @@
 # Academic CV
 
-Template style for academic cv
+Template style for single column academic cv

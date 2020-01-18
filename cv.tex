@@ -1,0 +1,330 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+
+\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\RequirePackage{dashrule}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Thulana}{Kannangara}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Colombo, Sri Lanka}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+ %\phone[mobile]{(+88)0 1718268856}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+ \colorlet{accent}{blue!70!black}
+\colorlet{heading}{black}
+\colorlet{emphasis}{black}
+\colorlet{body}{black!80!white}
+ \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+ 
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand{\cvevent}[4]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}\par
+  \smallskip}
+  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar\hspace{0.5em}#3}}}%
+  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}}\par
+  \medskip\normalsize
+}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-23mm}
+
+\begin{center}
+\begin{tabular}{ c c c }
+ \faEnvelopeO\enspace thulana.14@cse.mrt.ac.lk & 
+ \faMobile\enspace +94712638750 &
+ \faLinkedin\enspace linkedin.com/in/thulana-kannangara/
+%  \faGithub\enspace github.com/thulana 
+ \\  
+\end{tabular}
+\end{center}
+
+\section{RESEARCH INTEREST}
+Self Healing Systems, Automated Software repair \& recovery
+
+\section{EDUCATION}
+{\customcventry{2019}{B.Sc in Computer Science and Engineering   }{University of Moratuwa, Faculty of Engineering}{Moratuwa, Sri Lanka}{}{}}
+CGPA: 3.68 
+
+{\customcventry{2013}{A/L (Science Stream) }{Royal college}{Colombo, Sri Lanka}{}{}}
+3 A
+
+{\customcventry{2010}{O/L }{Royal college}{Colombo, Sri Lanka}{}{}}
+8A B
+
+\section{PUBLICATIONS}
+\begin{itemize}
+    \item Rigel: A Framework for OpenMP Performance Tuning \\
+    \textit{"2019 IEEE 21st International Conference on High Performance Computing and Communications; IEEE 17th International Conference on Smart City; IEEE 5th International Conference on Data Science and Systems (HPCC/SmartCity/DSS), Zhangjiajie, China, 2019, pp. 2093-2102.Rigel: A Framework for OpenMP Performance Tuning"}   
+\end{itemize}
+
+
+\section{RESEARCH EXPERIENCE}
+\textbf{Performance Tradeoffs of Pragma-Based Parallel Programming Models}
+\vspace{1mm}
+\begin{itemize}
+    \item A framework to explore best combination of OpenMP pragma directives for a given parallel program.
+\end{itemize}
+
+\textbf{Impact of domain constraints on general program repair tool-set}
+\vspace{1mm}
+\begin{itemize}
+    \item Personal ongoing research regarding the impact of domain specificity on a universal program repair tool-set.
+\end{itemize}
+
+
+% \section{ TEACHING EXPERIENCE}
+
+% {\customcventry{September 2017 - present}{Lecturer, Department of Computer Science and Engineering}{Daffodil International University}{Dhaka, Bangladesh}{}{}
+
+% }
+% \vspace{2mm}
+% {\customcventry{June 2017 - August 2017}{Lecturer, Department of Computer Science and Engineering}{University of Information Technology and Sciences}{Dhaka, Bangladesh}{}{}
+% }
+% \vspace{2mm}
+
+% \textbf{Courses taught:}
+% Compiler Design, Compiler Design Laboratory, Database Management System,Database Management System Laboratory, Operating System, Artificial Intelligence, Artificial Intelligence Laboratory, Theory of Computation, Algorithm , Algorithm Laboratory, Computer Fundamentals, Discrete Mathematics.
+
+\section{KEY SKILLS}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming Language\ & C, Java, Python \\
+Web Based Technology\ & HTML, CSS, JS, JQuery, php, NodeJS, ReactJS, Spring, Hibernate  \\
+DevOps\ & Docker, Jenkins, AWS, GCloud, Ansible, GoCD, Travis \\
+DBMS\ & MySQL, Postgres, SQLite, MongoDB\\
+\end{tabular}
+
+%\section{COMPETITIVE PROGRAMMING}
+%{\customcvproject{Problem Solving}{}
+%{\begin{itemize}
+  %\item UVA online judge (80+ problems)
+%\end{itemize}
+%}
+%}
+\section{CERTIFICATIONS}
+\begin{itemize}
+    \item Oracle Certified Associate, Java SE 8 Programmer
+\end{itemize}
+
+\newpage
+\section{PROJECTS}
+
+{\customcvproject{Server Configuration Automation with Ansible}{Aug 2017 - Sep 2017}
+  {\begin{itemize}
+   \item Ansible Server was created with Ansible tower interface to automate configurations of OrangeHRM servers.
+    \item Technologies : Ansible, Ansible tower
+  \end{itemize}
+  }
+}
+
+{\customcvproject{Centralized log monitoring system for OrangeHRM}{Sep 2017 - Oct 2017}
+{\begin{itemize}
+  \item A complete log collecting, monitoring and alerting system for more than 10 servers.
+  \item Technologies : Elasticsearch database, Logstash, Kibana, Beats
+\end{itemize}
+}
+}
+
+{\customcvproject{Information Management System}{Jan 2017 - Apr 2017}
+{\begin{itemize}
+\item information management system which can be used to simplify and automate the quotation handling,return management and project management tasks of a small business
+\item Technologies : PHP, Laravel Framework, CSS, HTML, jQuery,JavaScript
+\end{itemize}
+}
+}
+
+{\customcvproject{CPU Architecture Design}{Sep 2015 – Nov 2015}
+{\begin{itemize}
+  \item This project aims at implementing a 8-bit processor using FPGA board. CPU was built with its own instruction set architecture. VHDL is used for testing various components of the CPU.
+\end{itemize}
+}
+}
+
+\section{EXPERIENCE}
+\cvevent{SOFTWARE ENGINEER }{Sysco Labs, Colombo}{January 2019 -- Present}{Colombo, Sri Lanka}
+\begin{itemize}
+\item Micro services development with spring boot and nodejs 
+\item Database optimization and database infrastructure optimization 
+\item Continuous integration and deployment with Jenkins, GoCD, AWS
+\item Frontend development with reactjs
+\item Key member of the development team of Sysco Ordering platform which process more than 20M USD worth orders per day
+%\smallskip
+\end{itemize}
+
+\divider
+
+\cvevent{SOFTWARE ENGINEER (Intern)}{OrangeHRM (pvt) Ltd.}{July 2018 -- December 2018}{Colombo, Sri Lanka}
+\begin{itemize}
+\item Design and develop open-source CICD infrastructure using Jenkins, Travis, Git, SVN, Docker
+\item Design and develop Log management system using ELK stack
+\item Configuration management and server task automation with Ansible
+%\smallskip
+\end{itemize}
+
+\divider
+
+\cvevent{FREELANCE PROGRAMMER}{Fiverr}{May 2014 -- Present}{Colombo, Sri Lanka}
+\begin{itemize}
+\item Projects in different areas such as Machine Learning, Image Processing, CICD, DevOps, code optimization, database management, cloud infrastructure design and development
+\item Exposure to different technologies 
+%\smallskip
+\end{itemize}
+
+%\divider
+
+\section{AWARDS AND ACHIEVEMENTS}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+          \item Deans List of the faculty of EEE in recognition of outstanding academic performance in the session of Semester 1,2 \& 5.
+          \vspace{1mm}
+          \item IEEEXtreme 2016 Programming Competition – Island rank 4
+          \vspace{1mm}
+		\end{itemize}}%
+\end{minipage}%
+
+
+
+
+% \section{VOLUNTARY ACTIVITIES}
+% \begin{itemize}
+%     \item Member, DREAM(Blood donating organization).
+%     \vspace{1mm}
+%     \item Organizer, National High School Programming Contest, Khulna Zone (2015,2016,2017).
+%      \vspace{1mm}
+%     \item Mentor, Intra departmental idea contest organized by CSE Association, KUET.
+%      \vspace{1mm}
+%     \item Member, SGIPC (Standard group of interested in programming contest).
+% \end{itemize}
+
+% \section{REFERENCES}
+% \begin{itemize}
+%     \item \textbf{Dr.M.M.A Hashem}\\
+%     Professor, Department of Computer Science and Engineering\\
+%     Khulna University of Engineering \& Technology, Khulna-9203 , Bangladesh.\\
+%     mma.hashem@gmail.com, hashem@cse.kuet.ac.bd\\
+%     Cell:(+880) 1714003949
+    
+%     \vspace{2mm}
+%      \item \textbf{Dr.K.M Azharul Hasan}\\
+%     Professor, Department of Computer Science and Engineering\\
+%     Khulna University of Engineering \& Technology, Khulna-9203 , Bangladesh.\\
+%     azhasan@gmail.com, az@cse.kuet.ac.bd\\
+%     Cell:(+880) 1714087273
+    
+% \end{itemize}
+      
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
