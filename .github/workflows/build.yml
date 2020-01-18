@@ -20,6 +20,8 @@ jobs:
       - name: Deploy app
         if: github.ref == 'refs/heads/master'
         run: |
+          git config --global user.email "${GITHUB_EMAIL}"
+          git config --global user.name "${GITHUB_USER}"
           git clone https://github.com/Thulana/thulana.github.io.git
           cp ./cv.pdf ./thulana.github.io/assets/cv.pdf
           cd ./thulana.github.io && git add assets/cv.pdf
