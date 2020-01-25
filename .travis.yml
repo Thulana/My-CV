@@ -1,24 +1,13 @@
 os: linux
-#
-## we use the R VM because it contains LaTeX and pandoc
-#language: r
-
-## we need super user privileges, so we depend on the old travis-ci infrastructure
-#sudo: required
 
 before_install:
   - sudo apt-get install -y texlive-full
   - chmod +x blog_push.sh
 
-#apt_packages:
-#  # we download pdf2djvu to also generate a djvu file of our LaTeX source
-#  - pdf2djvu
 
 script:
-  # if you have a markdown source, you can use pandoc to convert it to a LaTeX document
+  # build the cv
   - make
 
 after_success:
   - if [ "$TRAVIS_BRANCH" = "master" ]; then ./blog_push.sh; fi
-# upload the previously generated pdf file to simonwaldherr.de (use $UPLOADSECRET as password)
-#  - wget --post-file=HowtoDeployLatexDocs-DE.pdf -q -O- "https://simonwaldherr.de/pdf/?repo=HowtoDeployLatexDocs&mode=save&key=$UPLOADSECRET&pull=$TRAVIS_PULL_REQUEST"
