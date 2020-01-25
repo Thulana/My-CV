@@ -13,7 +13,7 @@ jobs:
       - name: Add to release
         uses: actions/upload-artifact@v1
         with:
-          name: cv-$SHA8
+          name: cv-${GITHUB_SHA}
           path: cv.pdf
         env:
           SHA8: ${GITHUB_SHA::8}
