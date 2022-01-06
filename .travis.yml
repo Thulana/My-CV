@@ -10,4 +10,4 @@ script:
   - make
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then ./blog_push.sh; fi
+  - if [ "$TRAVIS_BRANCH" = "cv-v2" ]; then ./blog_push.sh; fi
