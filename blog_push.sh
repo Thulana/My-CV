@@ -1,11 +1,12 @@
 #!/bin/sh
 
 commit_website_files() {
-  git clone https://github.com/Thulana/thulana.github.io.git
-  cp ./cv.pdf ./thulana.github.io/assets/cv.pdf
-  cd ./thulana.github.io && git add assets/cv.pdf
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER - Pushing updated cv to the blog"
-  git push https://"${GITHUB_USER}":"${GITHUB_PASSWORD}"@github.com/Thulana/thulana.github.io.git --all
+  cp ./cv.pdf ./blog/assets/cv.pdf
+  cd ./blog && git add assets/cv.pdf
+  git config user.name github-actions
+  git config user.email github-actions@github.com
+  git commit --message "Commit: $SHA8 - Pushing updated cv to the blog"
+  git push
 }
 
 

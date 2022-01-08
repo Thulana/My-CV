@@ -13,14 +13,24 @@ jobs:
             sudo apt-get install -y texlive-full
       - name: Build CV
         run: make
-      - name: Push CV to blog
-        if: github.ref == 'refs/heads/cv-v2'
-        run: |
-          sh ./blog_push.sh
-      - name: Add to release
-        uses: actions/upload-artifact@v1
+#      - name: Add to release
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: cv-${GITHUB_SHA}
+#          path: cv.pdf
+#        env:
+#          SHA8: ${GITHUB_SHA::8}
+      - name: Checkout blog
+        uses: actions/checkout@v2
         with:
-          name: cv-${GITHUB_SHA}
-          path: cv.pdf
+          repository: Thulana/thulana.github.io
+          path: './blog'
+      - name: Push CV to blog
+          if: github.ref == 'refs/heads/cv-v2'
+          run: |
+            sh ./blog_push.sh
         env:
+          GITHUB_USER: ${{ secrets.GITHUB_USER }}
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
           SHA8: ${GITHUB_SHA::8}
+
