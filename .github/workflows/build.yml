@@ -6,10 +6,18 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: cv.tex
+      - uses: xu-cheng/texlive-action/full@v1
+      - name: update texlive
+        run: |
+            sudo apt-get update -y
+            sudo apt-get install -y texlive-full
+      - name: Build CV
+        run: |
+            sh make
+      - name: Push CV to blog
+        if: github.ref == 'refs/heads/cv-v2'
+        run: |
+          sh ./blog_push.sh
       - name: Add to release
         uses: actions/upload-artifact@v1
         with:
