@@ -26,9 +26,9 @@ jobs:
           repository: Thulana/thulana.github.io
           path: './blog'
       - name: Push CV to blog
-          if: github.ref == 'refs/heads/cv-v2'
-          run: |
-            sh ./blog_push.sh
+        if: github.ref == 'refs/heads/cv-v2'
+        run: |
+          sh ./blog_push.sh
         env:
           GITHUB_USER: ${{ secrets.GITHUB_USER }}
           GITHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
