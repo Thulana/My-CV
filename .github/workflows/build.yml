@@ -6,13 +6,18 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - uses: xu-cheng/texlive-action/full@v1
+#      - uses: xu-cheng/texlive-action/full@v1
 #      - name: update texlive
 #        run: |
 #            sudo apt-get update -y
 #            sudo apt-get install -y texlive-full
       - name: Build CV
-        run: make
+#        run: make
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: cv.tex
+          compiler: xelatex
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: Push CV to blog
         if: github.ref == 'refs/heads/cv-v2'
         run: |
