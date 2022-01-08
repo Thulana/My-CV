@@ -25,6 +25,7 @@ jobs:
         with:
           repository: Thulana/thulana.github.io
           path: './blog'
+          token: ${{ secrets.ACTIONS_TOKEN }}
       - name: Push CV to blog
         if: github.ref == 'refs/heads/cv-v2'
         run: |
@@ -34,3 +35,6 @@ jobs:
           git config user.email github-actions@github.com
           git commit --message "Commit: $GITHUB_SHA - Pushing updated cv to the blog"
           git push
+        env:
+          GITHUB_USER: ${{ secrets.GITHUB_USER }}
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
