@@ -17,3 +17,4 @@ jobs:
           path: cv.pdf
         env:
           SHA8: ${GITHUB_SHA::8}
+          
