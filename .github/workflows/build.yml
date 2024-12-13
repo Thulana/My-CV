@@ -6,14 +6,35 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: cv.tex
+      - uses: xu-cheng/texlive-action/full@v1
+      - name: update texlive
+        run: |
+            sudo apt-get update -y
+            sudo apt-get install -y texlive-full
+      - name: Build CV
+        run: make
       - name: Add to release
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
-          name: cv-${GITHUB_SHA}
+          name: cv
           path: cv.pdf
         env:
           SHA8: ${GITHUB_SHA::8}
+      - name: Checkout blog
+        uses: actions/checkout@v2
+        with:
+          repository: Thulana/thulana.github.io
+          path: './blog'
+          token: ${{ secrets.ACTIONS_TOKEN }}
+      - name: Push CV to blog
+        if: github.ref == 'refs/heads/cv-v2'
+        run: |
+          cp ./cv.pdf ./blog/assets/cv.pdf
+          cd ./blog && git add assets/cv.pdf
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit --message "Commit: $GITHUB_SHA - Pushing updated cv to the blog"
+          git push
+        env:
+          GITHUB_USER: ${{ secrets.GITHUB_USER }}
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
