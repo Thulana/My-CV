@@ -13,13 +13,13 @@ jobs:
             sudo apt-get install -y texlive-full
       - name: Build CV
         run: make
-#      - name: Add to release
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: cv-${GITHUB_SHA}
-#          path: cv.pdf
-#        env:
-#          SHA8: ${GITHUB_SHA::8}
+      - name: Add to release
+        uses: actions/upload-artifact@v1
+        with:
+          name: cv
+          path: cv.pdf
+        env:
+          SHA8: ${GITHUB_SHA::8}
       - name: Checkout blog
         uses: actions/checkout@v2
         with:
