@@ -11,6 +11,11 @@ jobs:
     - name: Setup TeX Live
       uses: xu-cheng/texlive-action/full@v1
 
+    - name: Update texlive
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y texlive-full
+
     - name: Cache TeX Live packages
       uses: actions/cache@v2
       with:
