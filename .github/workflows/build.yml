@@ -16,14 +16,6 @@ jobs:
         sudo apt-get update -y
         sudo apt-get install -y texlive-full
 
-    - name: Cache TeX Live packages
-      uses: actions/cache@v4
-      with:
-        path: /usr/local/texlive
-        key: ${{ runner.os }}-texlive-${{ hashFiles('**/*.tex') }}
-        restore-keys: |
-          ${{ runner.os }}-texlive-
-
     - name: Build CV
       run: make
 
