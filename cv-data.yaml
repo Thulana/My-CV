@@ -1,0 +1,110 @@
+personal:
+  first_name: "Thulana"
+  last_name: "Kannangara"
+  title: "Senior Software Engineer"
+  tagline: "Senior Software Engineer with 7+ years of experience building scalable distributed systems"
+  
+contact:
+  phone: "+(49) 1747349795"
+  email: "thulanakannangara@gmail.com"
+  location: "Berlin, Germany"
+  linkedin: "thulana-kannangara"
+  github: "thulana"
+  website: "virtualdump.net"
+
+summary: |
+  Senior Software Engineer with 7+ years building scalable distributed systems. Optimized platforms handling 20M+ USD daily transactions and 150K+ concurrent users. Expertise in microservices, AWS/GCP, and team leadership.
+
+skills:
+  - category: "Languages"
+    items: ["Java", "Python", "TypeScript", "JavaScript", "Kotlin"]
+  
+  - category: "Frameworks"
+    items: ["Spring Boot", "Node.js", "React", "React Native", "Flask"]
+  
+  - category: "Databases"
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch"]
+  
+  - category: "Cloud & DevOps"
+    items: ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)", "Kubernetes", "Docker", "Jenkins"]
+
+experience:
+  - company: "Zenjob SE"
+    location: "Berlin, Germany"
+    role: "Senior Software Engineer"
+    start_date: "July 2022"
+    end_date: "Present"
+    achievements:
+      - "Optimized offer feed system reducing P95 latency by 75% (2s to 500ms), improving experience for 20K+ active workers"
+      - "Led initiatives improving platform fulfillment rate to 90%+, directly impacting revenue and customer satisfaction"
+      - "Delivered full-stack features across React Native, Spring Boot/Kotlin, mobile (iOS/Android), and AWS/Kubernetes infrastructure"
+    technologies: ["Spring Boot", "Kotlin", "React Native", "Android", "PostgreSQL", "AWS", "Kubernetes"]
+  
+  - company: "Sysco Labs"
+    location: "Colombo, Sri Lanka"
+    role: "Senior Software Engineer"
+    start_date: "August 2020"
+    end_date: "July 2022"
+    achievements:
+      - "Architected 10+ microservices for e-commerce platform processing 20M+ USD daily, supporting 150K+ concurrent users"
+      - "Led team of 6-8 engineers designing scalable backend architecture and CI/CD pipelines"
+      - "Reduced infrastructure costs by 25% through AWS optimization and Kubernetes autoscaling"
+    technologies: ["Spring Boot", "Node.js", "React", "PostgreSQL", "AWS", "Kubernetes"]
+  
+  - company: "Sysco Labs"
+    location: "Colombo, Sri Lanka"
+    role: "Software Engineer"
+    start_date: "January 2019"
+    end_date: "August 2020"
+    achievements:
+      - "Developed Sysco Shop ordering platform processing 20M+ USD daily orders"
+      - "Built full-stack features using React, Node.js, and Spring Boot across multiple microservices"
+    technologies: ["Spring Boot", "Node.js", "React", "PostgreSQL", "AWS", "Kubernetes"]
+  
+# Removed internship to save space (7+ years of professional experience is sufficient)
+  # - company: "OrangeHRM (Pvt) Ltd"
+  #   location: "Colombo, Sri Lanka"
+  #   role: "Software Engineer - Intern"
+  #   start_date: "June 2017"
+  #   end_date: "December 2017"
+  #   achievements:
+  #     - "Built centralized log monitoring system (ELK stack) for 10+ servers, reducing debugging time by 60%"
+  #     - "Automated CI/CD pipelines with Docker and Jenkins, reducing deployment time from hours to minutes"
+  #   technologies: ["Docker", "ELK Stack", "Jenkins", "Ansible"]
+
+education:
+  - degree: "B.Sc. (Hons.) Computer Science and Engineering"
+    institution: "University of Moratuwa"
+    location: "Sri Lanka"
+    graduation_year: "2018"
+    gpa: "3.69 / 4.20"
+    # achievements: []  # Add any honors, leadership positions, etc.
+  
+  - degree: "High School Graduate"
+    institution: "Royal College"
+    location: "Colombo, Sri Lanka"
+    graduation_year: "2013"
+
+projects:
+  - name: "Sysco Shop E-commerce Platform"
+    duration: "2019 - 2022"
+    organization: "Sysco"
+    url: "http://shop.sysco.com"
+    description: "Marketplace platform processing 20M+ USD daily. Designed backend architecture, developed microservices, and maintained production systems with 99.9% uptime."
+    technologies: ["Spring Boot", "Node.js", "React", "Kubernetes", "AWS"]
+
+publications:
+  - title: "Rigel: A Framework for OpenMP Performance Tuning"
+    venue: "IEEE International Conference on High Performance Computing and Communications (HPCC)"
+    year: "2019"
+    url: "https://ieeexplore.ieee.org/abstract/document/8855553"
+
+# Removed old certification to save space (publication is more valuable)
+# certifications:
+#   - name: "Oracle Certified Associate, Java SE 8 Programmer"
+#     year: "2015"
+#     issuer: "Oracle"
+
+# Optional sections (currently not used but can be added)
+awards: []
+languages: []

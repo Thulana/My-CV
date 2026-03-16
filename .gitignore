@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Generated files
+cv-output.html
+cv-ats-friendly.pdf
+
+# LaTeX generated files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# OS files
+.DS_Store
+.idea/
+
+# Backup files
+*~
+*.bak
